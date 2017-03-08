@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9F9F9"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/garageIcon"
+        android:src="@drawable/c001"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dirección del garaje"
+        android:id="@+id/garageAddress"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/garageIcon"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esta es la descripción del garaje ofrecido, puede tener hasta 200 carácteres. Escribo en esta zona para saber hasta donde me permite escribir y así poder modificar el text view "
+        android:id="@+id/garageDescription"
+        android:layout_below="@id/garageAddress"
+        android:layout_alignBottom="@id/garageIcon"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/garageIcon"
+        android:maxLines="3"
+        android:ellipsize="end"
+
+        />
+
+
+</RelativeLayout>
