@@ -39,12 +39,12 @@ public class GarageAdapter extends ArrayAdapter<Garage>{
 
             //if there is no view already then create a new viewholder (with our view references)
             viewHolder= new ViewHolder();
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_row,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.air_list_row,parent,false);
 
             //Setting up the view holder-referencing to layout elements
-            viewHolder.garageAddress = (TextView)convertView.findViewById(R.id.garageAddress);
-            viewHolder.garageDescription = (TextView)convertView.findViewById(R.id.garageDescription);
-            viewHolder.garageIcon = (ImageView)convertView.findViewById(R.id.garageIcon);
+            viewHolder.garageAddress = (TextView)convertView.findViewById(R.id.garageAddress2);
+            viewHolder.garageDescription = (TextView)convertView.findViewById(R.id.garageDescription2);
+            viewHolder.garageIcon = (ImageView)convertView.findViewById(R.id.garageIcon2);
 
             //use tag to remember our viewholder
             convertView.setTag(viewHolder);
@@ -67,4 +67,6 @@ public class GarageAdapter extends ArrayAdapter<Garage>{
         //return the view modified with the data taken
         return convertView;
     }
+
+
 }

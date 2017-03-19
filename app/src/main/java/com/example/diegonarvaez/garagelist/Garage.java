@@ -1,7 +1,5 @@
 package com.example.diegonarvaez.garagelist;
 
-import android.icu.util.ULocale;
-
 /**
  * Created by diegonarvaez on 20/09/16.
  */
@@ -9,6 +7,8 @@ public class Garage {
     private String address, description;
     private long garageId, dateCreatedMilli;
     private int codigo;
+    private double lat;
+    private double lng;
     private Category category;
 
 
@@ -21,6 +21,15 @@ public class Garage {
         this.garageId=0;
         this.dateCreatedMilli= 0;
         this.codigo= codigo;
+    }
+    public Garage (int codigo, String address, String description, double lat, double lng){
+        this.address = address;
+        this.description= description;
+        this.garageId=0;
+        this.dateCreatedMilli= 0;
+        this.codigo= codigo;
+        this.lat = lat;
+        this.lng = lng;
     }
     //una clase Garage con 2 parametros más
     public Garage (int codigo, String address, String description, Category category, long garageId, long dateCreatedMilli){
@@ -54,6 +63,11 @@ public class Garage {
     public String toString(){
         return "ID: "+ garageId + "Dirección: "+ address + "IconID: " + category.name() + "Date:" ;
     }
+
+    //Added this later
+    public double getLat(){ return lat;}
+    public double getLng(){ return lng;}
+
 
 
     public int getAssociatedDrawable(){
