@@ -24,28 +24,35 @@ public class MainActivityListFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
 
+
+
+
         /*
         String[] valores = new String[]{"Linux","MacOS","Windows","Raspbian","Ubuntu","iOS"};
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, valores);
         setListAdapter(adaptador);
         */
 
+        //
+
+
         //instanciamos el ArrayList que el GarageAdapter pide como parametro
         garages = new ArrayList<Garage>();
         //le añadimos items a nuestro ArrayList
 
-        garages.add(new Garage(1,"Av Camino Real 321","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(2,"Av Conquistadores 245","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
-        garages.add(new Garage(3,"Ca. Esquilache 211","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(4,"Av Conquistadores 224","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
-        garages.add(new Garage(5,"Av Camino Real 721","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(6,"Av Conquistadores 345","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
-        garages.add(new Garage(1,"Av Camino Real 390","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(3,"Av Conquistadores 245","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
-        garages.add(new Garage(5,"Ca. Esquilache 211","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(6,"Av Conquistadores 224","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
-        garages.add(new Garage(4,"Av Camino Real 721","Esta ubicado en el centro comercial camino real", Garage.Category.EXTERIOR));
-        garages.add(new Garage(2,"Av Conquistadores 345","Esta ubicado a unas cuadras de Idiomas", Garage.Category.INTERIOR));
+        garages.add(new Garage(1,"Av Camino Real 321","Esta ubicado en el centro comercial camino real", -12.1166116,-77.009881));
+        garages.add(new Garage(2,"Av Conquistadores 245","Esta ubicado a unas cuadras de Idiomas", -12.1611116,-77.019881));
+        garages.add(new Garage(3,"Ca. Esquilache 211","Esta ubicado en el centro comercial camino real", -12.1311116,-77.000981));
+        garages.add(new Garage(4,"Av Conquistadores 224","Esta ubicado a unas cuadras de Idiomas", -12.1311116,-77.009881));
+        garages.add(new Garage(5,"Av Camino Real 721","Esta ubicado en el centro comercial camino real", -12.1311116,-77.009881));
+        garages.add(new Garage(6,"Av Conquistadores 345","Esta ubicado a unas cuadras de Idiomas", -12.172042,-77.0233847));
+        garages.add(new Garage(1,"Av Camino Real 390","Esta ubicado en el centro comercial camino real", -12.1311116,-77.009881));
+        garages.add(new Garage(3,"Av Conquistadores 245","Esta ubicado a unas cuadras de Idiomas", -12.1311116,-77.009881));
+        garages.add(new Garage(5,"Ca. Esquilache 211","Esta ubicado en el centro comercial camino real", -12.132116,-77.009661));
+        garages.add(new Garage(6,"Av Conquistadores 224","Esta ubicado a unas cuadras de Idiomas", -12.1371116,-77.009881));
+        garages.add(new Garage(4,"Av Camino Real 721","Esta ubicado en el centro comercial camino real", -12.1311116,-77.009881));
+        garages.add(new Garage(2,"Av Conquistadores 345","Esta ubicado a unas cuadras de Idiomas", -12.1411116,-77.029881));
+        garages.add(new Garage(3,"Av Juan de Arona 421", "Esta ubicado a la espalda del CC. Camino Real", -12.1344116,-77.001881));
 
 
         //instanciamos el adapter
@@ -74,12 +81,24 @@ public class MainActivityListFragment extends ListFragment {
         //pass the info of the garage we clicked on to our garageDetailActivity
         intent.putExtra(MainActivity.GARAGE_ADDRESS_EXTRA,garage.getAddress());
         intent.putExtra(MainActivity.GARAGE_DESCRIPTION_EXTRA,garage.getDescription());
-        intent.putExtra(MainActivity.GARAGE_CATEGORY_EXTRA,garage.getCategory());
+        //intent.putExtra(MainActivity.GARAGE_CATEGORY_EXTRA,garage.getCategory());
         intent.putExtra(MainActivity.GARAGE_CODE_EXTRA,garage.getCodigo());
         intent.putExtra(MainActivity.GARAGE_ID_EXTRA,garage.getId());
+
+        //Extras i added later -- NOT USED YET
+        intent.putExtra(MainActivity.GARAGE_LAT_EXTRA,garage.getLat());
+        intent.putExtra(MainActivity.GARAGE_LNG_EXTRA,garage.getLng());
+
+
+
+
 
         startActivity(intent);
 
     }
 
+    public void updateInfo(double positionLat, double positionLng) {
+
+
+    }
 }

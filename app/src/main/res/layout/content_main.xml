@@ -3,10 +3,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:orientation="vertical"
     tools:context="com.example.diegonarvaez.garagelist.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/tvEstacionarCercaA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:text="Estacionar cerca a:"
+            android:textColor="@color/overSkyBlue"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEstacionarCercaA"
+            android:layout_marginLeft="5dp"
+            android:text="Dirección del lugar"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estacionamientos disponibles:"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        android:textAlignment="center"
+        />
 
     <fragment
         android:id="@+id/frMain"
