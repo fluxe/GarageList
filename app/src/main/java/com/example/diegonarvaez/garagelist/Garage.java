@@ -7,8 +7,8 @@ public class Garage {
     private String address, description;
     private long garageId, dateCreatedMilli;
     private int codigo;
-    private double lat;
-    private double lng;
+    private double lat, lng;
+    private double distance;
     private Category category;
 
 
@@ -22,7 +22,7 @@ public class Garage {
         this.dateCreatedMilli= 0;
         this.codigo= codigo;
     }
-    public Garage (int codigo, String address, String description, double lat, double lng){
+    public Garage (int codigo, String address, String description, double lat, double lng, double distance){
         this.address = address;
         this.description= description;
         this.garageId=0;
@@ -30,6 +30,7 @@ public class Garage {
         this.codigo= codigo;
         this.lat = lat;
         this.lng = lng;
+        this.distance = distance;
     }
     //una clase Garage con 2 parametros más
     public Garage (int codigo, String address, String description, Category category, long garageId, long dateCreatedMilli){
@@ -68,7 +69,11 @@ public class Garage {
     public double getLat(){ return lat;}
     public double getLng(){ return lng;}
 
-
+    //Distance Getter and Setter
+    public double getDistance(){ return distance;}
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
 
     public int getAssociatedDrawable(){
         return codigoToDrawable(codigo);

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String GARAGE_LNG_EXTRA = "com.example.diegonarvaez.garagelist.Garage Longitude";
 
 
+
     public double positionLat;
     public double positionLng;
 
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
             startPlacePickerActivity();
-
     }
 
     private void startPlacePickerActivity() {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     private void displaySelectedPlaceFromPlacePicker(Intent data) {
         Place placeSelected = PlacePicker.getPlace(this, data);
 
-        String placeName = (String) placeSelected.getName();
+        //String placeName = (String) placeSelected.getName();
         String placeAddress = placeSelected.getAddress().toString();
         double placeLat = placeSelected.getLatLng().latitude;
         double placeLng = placeSelected.getLatLng().longitude;
@@ -73,11 +73,12 @@ public class MainActivity extends AppCompatActivity {
         //AddressName.setText( placeName + ", " + placeAddress);
         positionLat = placeLat;
         positionLng = placeLng;
-        data.putExtra("positionLat", positionLat);
-        data.putExtra("positionLng", positionLng);
+        //data.putExtra("positionLat", positionLat);
+        //data.putExtra("positionLng", positionLng);
 
         //Using the method i created to communicate with the MainActivityListFragment
         setPositionCoordinates(positionLat, positionLng);
+
 
     }
 
@@ -114,10 +115,9 @@ public class MainActivity extends AppCompatActivity {
     //---------------------------------------------------------
 
 
-    public void setPositionCoordinates (double positionLat, double positionLng){
-
+    private void setPositionCoordinates (double positionLat, double positionLng){
         MainActivityListFragment mainActivityListFragment = (MainActivityListFragment) getFragmentManager().findFragmentById(R.id.frMain);
-        mainActivityListFragment.updateInfo(positionLat,positionLng);
+        mainActivityListFragment.getPositionCoordinates(positionLat,positionLng);
     }
 
 }
